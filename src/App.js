@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { themeDark, themeLight } from './theme';
+import HomePage from './pages/home';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
+  const [dark, setDark] = useState(true);
+
   return (
-    <div className="App">
-      App
-    </div>
+    <ThemeProvider theme={dark ? themeDark : themeLight}>
+      <CssBaseline />
+      <HomePage />
+    </ThemeProvider>
   );
 }
 
