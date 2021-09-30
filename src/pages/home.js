@@ -1,9 +1,10 @@
 import React from 'react';
+import withTitle from '../components/HOC/withTitle';
 
 const HomePage = () => (
   <div>
-    thalesbruno.dev
+    React and Material-UI template
   </div>
 );
 
-export default HomePage;
+export default withTitle(HomePage, 'Home');
