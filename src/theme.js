@@ -5,7 +5,7 @@ import { red } from '@mui/material/colors';
 export const themeDark = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#13A10E',
     },
     secondary: {
       main: '#19857b',
@@ -18,20 +18,21 @@ export const themeDark = createTheme({
     },
     text: {
       primary: '#ccc',
+      secondary: '#111',
     },
   },
-  typography: {
-    fontFamily: [
-      'Ubuntu Mono',
-      'monospace',
-    ].join(','),
-  },
+  // typography: {
+  //   fontFamily: [
+  //     'Ubuntu Mono',
+  //     'monospace',
+  //   ].join(','),
+  // },
 });
 
 export const themeLight = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#5E2750',
     },
     secondary: {
       main: '#19857b',
@@ -40,16 +41,17 @@ export const themeLight = createTheme({
       main: red.A400,
     },
     background: {
-      default: '#fff',
+      default: '#EEEDEB',
     },
     text: {
-      primary: '#000',
+      primary: '#111',
+      secondary: '#ccc',
     },
   },
-  typography: {
-    fontFamily: [
-      'Ubuntu Mono',
-      'monospace',
-    ].join(','),
-  },
+  // typography: {
+  //   fontFamily: [
+  //     'Ubuntu Mono',
+  //     'monospace',
+  //   ].join(','),
+  // },
 });

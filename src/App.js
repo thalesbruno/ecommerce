@@ -11,14 +11,14 @@ import Footer from './components/Footer';
 
 function App() {
   // eslint-disable-next-line no-unused-vars
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   return (
     <ThemeProvider theme={dark ? themeDark : themeLight}>
       <HelmetProvider>
         <CssBaseline />
         <Router>
-          <Header />
+          <Header dark={dark} setDark={setDark} />
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/about" component={AboutPage} />
