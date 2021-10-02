@@ -1,10 +1,14 @@
 import React from 'react';
-import withTitle from '../components/HOC/withTitle';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import pageWrapperHOC from '../components/wrappers/pageWrapperHOC';
 
 const HomePage = () => (
-  <div>
-    React and Material-UI template
-  </div>
+  <Container maxWidth="md">
+    <Typography variant="h2">
+      React and Material-UI template
+    </Typography>
+  </Container>
 );
 
-export default withTitle(HomePage, 'Home');
+export default pageWrapperHOC(HomePage, { title: 'Home', center: true });

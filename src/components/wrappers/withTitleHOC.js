@@ -1,11 +1,11 @@
 import React from 'react';
 import Title from '../Title';
 
-const withTitle = (ComponentChild, title) => (props) => (
+const withTitleHOC = (ComponentChild, title) => (props) => (
   <>
     <Title title={title} />
     <ComponentChild {...props} />
   </>
 );
 
-export default withTitle;
+export default withTitleHOC;
