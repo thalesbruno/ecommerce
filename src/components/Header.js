@@ -56,8 +56,8 @@ const MenuList = () => (
       display: 'flex',
     }}
   >
-    <MenuListLink to="/about">about</MenuListLink>
-    <MenuListLink to="/">contact</MenuListLink>
+    <MenuListLink to="/about">About</MenuListLink>
+    <MenuListLink to="/contact">Contact</MenuListLink>
   </Box>
 );
 
@@ -85,7 +85,7 @@ const MenuListLink = ({ children, ...props }) => (
 );
 
 const Header = ({ dark, setDark }) => (
-  <Box sx={{ flexGrow: 1 }}>
+  <Box>
     <AppBar
       position="static"
     >
