@@ -9,7 +9,7 @@ const Title = ({ title }) => {
     <Helmet>
       <title>
         {title || defaultTitle}
-        {' | React and Material-UI template'}
+        {' | e-Commerce'}
       </title>
     </Helmet>
   );

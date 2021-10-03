@@ -1,14 +1,9 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import pageWrapperHOC from '../components/wrappers/pageWrapperHOC';
 
 const HomePage = () => (
-  <Container maxWidth="md">
-    <Typography variant="h2">
-      React and Material-UI template
-    </Typography>
-  </Container>
+  <Grid container maxWidth="md" />
 );
 
-export default pageWrapperHOC(HomePage, { title: 'Home', center: true });
+export default pageWrapperHOC(HomePage, { title: 'Home' });

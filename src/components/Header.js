@@ -5,9 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import IconButton from '@mui/material/IconButton';
+import CartIcon from './CartIcon';
 
 const LeftSide = () => (
   <Box sx={{ height: '100%' }}>
@@ -27,24 +25,19 @@ const LeftSide = () => (
         },
       }}
     >
-      <Link to="/">Home</Link>
+      <Link to="/">e-Commerce</Link>
     </Typography>
   </Box>
 );
 
-const RightSide = ({ dark, setDark }) => (
+const RightSide = () => (
   <Box
     sx={{
       display: 'flex',
+      height: '100%',
     }}
   >
     <MenuList />
-    <IconButton
-      sx={{ color: 'primary.main' }}
-      onClick={() => setDark(!dark)}
-    >
-      {dark ? <LightModeIcon /> : <DarkModeIcon />}
-    </IconButton>
   </Box>
 );
 
@@ -54,18 +47,20 @@ const MenuList = () => (
     sx={{
       listStyleType: 'none',
       display: 'flex',
+      margin: 0,
+      padding: 0,
     }}
   >
-    <MenuListLink to="/about">About</MenuListLink>
-    <MenuListLink to="/contact">Contact</MenuListLink>
+    <MenuListLink to="/cart">
+      <CartIcon />
+    </MenuListLink>
   </Box>
 );
 
 const MenuListLink = ({ children, ...props }) => (
   <Typography
     component="li"
-    variant="h4"
-    marginRight="15px"
+    // variant="h4"
     color="text.primary"
     sx={{
       '& a': {
@@ -84,7 +79,7 @@ const MenuListLink = ({ children, ...props }) => (
   </Typography>
 );
 
-const Header = ({ dark, setDark }) => (
+const Header = () => (
   <Box>
     <AppBar
       position="static"
@@ -101,21 +96,11 @@ const Header = ({ dark, setDark }) => (
         }}
       >
         <LeftSide />
-        <RightSide dark={dark} setDark={setDark} />
+        <RightSide />
       </Toolbar>
     </AppBar>
   </Box>
 );
-
-Header.propTypes = {
-  dark: PropTypes.bool.isRequired,
-  setDark: PropTypes.func.isRequired,
-};
-
-RightSide.propTypes = {
-  dark: PropTypes.bool.isRequired,
-  setDark: PropTypes.func.isRequired,
-};
 
 MenuListLink.propTypes = {
   children: PropTypes.node.isRequired,

@@ -5,12 +5,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { themeDark, themeLight } from './theme';
+import { themeLight } from './theme';
 import HomePage from './pages/home';
-import AboutPage from './pages/about';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ContactPage from './pages/contact';
+import CartPage from './pages/cart';
 
 const AppWrapper = ({ children }) => (
   <Box
@@ -30,16 +29,15 @@ function App() {
   const [dark, setDark] = useState(false);
 
   return (
-    <ThemeProvider theme={dark ? themeDark : themeLight}>
+    <ThemeProvider theme={themeLight}>
       <HelmetProvider>
         <CssBaseline />
         <Router>
           <AppWrapper>
-            <Header dark={dark} setDark={setDark} />
+            <Header />
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/contact" component={ContactPage} />
-              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/chart" component={CartPage} />
             </Switch>
             <Footer />
           </AppWrapper>
