@@ -1,18 +1,19 @@
 import React, { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import productsJson from '../products.json';
 
-export const ExampleContext = createContext();
+export const ProductsContext = createContext();
 
-export const ExampleProvider = ({ children }) => {
-  const [someValue, setSomeValue] = useState(true);
+export const ProductsProvider = ({ children }) => {
+  const [products, setProducts] = useState(productsJson);
 
   return (
-    <ExampleContext.Provider value={[someValue, setSomeValue]}>
+    <ProductsContext.Provider value={[products, setProducts]}>
       {children}
-    </ExampleContext.Provider>
+    </ProductsContext.Provider>
   );
 };
 
-ExampleProvider.propTypes = {
-  children: PropTypes.number.isRequired,
+ProductsProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
