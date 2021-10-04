@@ -5,7 +5,7 @@ export default function Copyright() {
   return (
     <Typography variant="body1" color="text.primary" align="center">
       {'Copyright © '}
-      thalesbruno.dev
+      e-Commerce
       {' '}
       {new Date().getFullYear()}
       .

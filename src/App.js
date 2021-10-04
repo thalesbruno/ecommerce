@@ -10,6 +10,7 @@ import HomePage from './pages/home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CartPage from './pages/cart';
+import { ProductsProvider } from './contexts/ProductsContext';
 
 const AppWrapper = ({ children }) => (
   <Box
@@ -31,17 +32,19 @@ function App() {
   return (
     <ThemeProvider theme={themeLight}>
       <HelmetProvider>
-        <CssBaseline />
-        <Router>
-          <AppWrapper>
-            <Header />
-            <Switch>
-              <Route exact path="/" component={HomePage} />
-              <Route exact path="/chart" component={CartPage} />
-            </Switch>
-            <Footer />
-          </AppWrapper>
-        </Router>
+        <ProductsProvider>
+          <CssBaseline />
+          <Router>
+            <AppWrapper>
+              <Header />
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/chart" component={CartPage} />
+              </Switch>
+              <Footer />
+            </AppWrapper>
+          </Router>
+        </ProductsProvider>
       </HelmetProvider>
     </ThemeProvider>
   );

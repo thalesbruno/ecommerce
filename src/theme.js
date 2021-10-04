@@ -32,20 +32,20 @@ export const themeDark = createTheme({
 export const themeLight = createTheme({
   palette: {
     primary: {
-      main: '#5E2750',
+      main: '#1976d2',
     },
     secondary: {
-      main: '#19857b',
+      main: '#9c27b0',
     },
     error: {
-      main: red.A400,
+      main: '#d32f2f',
     },
     background: {
-      default: '#EEEDEB',
+      default: '#eee',
     },
     text: {
       primary: '#111',
-      secondary: '#ccc',
+      secondary: '#bdbdbd',
     },
   },
   // typography: {

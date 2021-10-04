@@ -10,12 +10,13 @@ import CartIcon from './CartIcon';
 const LeftSide = () => (
   <Box sx={{ height: '100%' }}>
     <Typography
-      variant="h3"
+      variant="h4"
       sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         color: 'text.secondary',
         bgcolor: 'primary.main',
-        // In order for a percentage value to work for height,
-        // the parent's height must be determined
         height: '100%',
         paddingLeft: '15px',
         paddingRight: '15px',
@@ -25,7 +26,9 @@ const LeftSide = () => (
         },
       }}
     >
-      <Link to="/">e-Commerce</Link>
+      <Link to="/">
+        e-Commerce
+      </Link>
     </Typography>
   </Box>
 );
@@ -80,26 +83,21 @@ const MenuListLink = ({ children, ...props }) => (
 );
 
 const Header = () => (
-  <Box>
-    <AppBar
-      position="static"
+  <AppBar
+    position="fixed"
+  >
+    <Toolbar
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        bgcolor: 'background.default',
+        height: '6vh',
+      }}
     >
-      <Toolbar
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          bgcolor: 'background.default',
-          borderBottomWidth: '2px',
-          borderBottomStyle: 'solid',
-          borderBottomColor: 'primary.main',
-          height: '6vh',
-        }}
-      >
-        <LeftSide />
-        <RightSide />
-      </Toolbar>
-    </AppBar>
-  </Box>
+      <LeftSide />
+      <RightSide />
+    </Toolbar>
+  </AppBar>
 );
 
 MenuListLink.propTypes = {
