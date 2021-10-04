@@ -9,6 +9,7 @@ const pageWrapperHOC = (PageComponentChild, { title, center = false }) => (props
       sx={{
         flexGrow: center ? 0 : 1,
         padding: '24px 0',
+        marginTop: '8vh',
       }}
     >
       <PageChildWithTitle {...props} />
