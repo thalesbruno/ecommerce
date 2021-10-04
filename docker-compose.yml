@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  ecommerce-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    image: ecommerce-ui:prod
+    ports:
+      - "3001:80"
