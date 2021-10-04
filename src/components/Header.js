@@ -84,16 +84,13 @@ const MenuListLink = ({ children, ...props }) => (
 
 const Header = () => (
   <AppBar
-    position="static"
+    position="fixed"
   >
     <Toolbar
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
         bgcolor: 'background.default',
-        borderBottomWidth: '2px',
-        borderBottomStyle: 'solid',
-        borderBottomColor: 'primary.main',
         height: '6vh',
       }}
     >

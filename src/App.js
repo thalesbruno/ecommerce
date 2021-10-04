@@ -10,7 +10,7 @@ import HomePage from './pages/home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CartPage from './pages/cart';
-import { ProductsProvider } from './contexts/ExampleContext';
+import { ProductsProvider } from './contexts/ProductsContext';
 
 const AppWrapper = ({ children }) => (
   <Box
