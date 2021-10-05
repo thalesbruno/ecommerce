@@ -14,8 +14,8 @@ import Rating from '@mui/material/Rating';
 const Item = ({ product }) => (
   <Card>
     <CardMedia
+      sx={{ marginTop: '8px' }}
       component="img"
-      // height="50"
       image={require(`../assets/${product.image}`).default}
     />
     <CardContent>

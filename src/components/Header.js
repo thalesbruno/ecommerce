@@ -15,7 +15,7 @@ const LeftSide = () => (
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        color: 'text.secondary',
+        // color: 'text.secondary',
         bgcolor: 'primary.main',
         height: '100%',
         paddingLeft: '15px',
