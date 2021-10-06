@@ -45,7 +45,8 @@ export const themeLight = createTheme({
     },
     text: {
       primary: '#111',
-      secondary: '#bdbdbd',
+      secondary: '#777',
+      disabled: '#bdbdbd',
     },
   },
   // typography: {

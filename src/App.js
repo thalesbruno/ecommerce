@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import CartPage from './pages/cart';
 import { ProductsProvider } from './contexts/ProductsContext';
+import { CartProvider } from './contexts/CartContext';
 
 const AppWrapper = ({ children }) => (
   <Box
@@ -26,25 +27,24 @@ const AppWrapper = ({ children }) => (
 );
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [dark, setDark] = useState(false);
-
   return (
     <ThemeProvider theme={themeLight}>
       <HelmetProvider>
-        <ProductsProvider>
-          <CssBaseline />
-          <Router>
-            <AppWrapper>
-              <Header />
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/chart" component={CartPage} />
-              </Switch>
-              <Footer />
-            </AppWrapper>
-          </Router>
-        </ProductsProvider>
+        <CartProvider>
+          <ProductsProvider>
+            <CssBaseline />
+            <Router>
+              <AppWrapper>
+                <Header />
+                <Switch>
+                  <Route exact path="/" component={HomePage} />
+                  <Route exact path="/cart" component={CartPage} />
+                </Switch>
+                <Footer />
+              </AppWrapper>
+            </Router>
+          </ProductsProvider>
+        </CartProvider>
       </HelmetProvider>
     </ThemeProvider>
   );
