@@ -85,3 +85,9 @@ Após qualquer alteração no código-fonte do projeto, é preciso usar o parâm
 ```docker
 docker-compose up --build
 ```
+
+## Testes
+Para rodar os testes, basta executar da pasta raiz do projeto:
+```
+yarn test
+```

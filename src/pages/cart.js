@@ -8,7 +8,7 @@ import pageWrapperHOC from '../components/wrappers/pageWrapperHOC';
 import { CartContext } from '../contexts/CartContext';
 import CartItem from '../components/CartItem';
 
-const CartPage = () => {
+export const CartPage = () => {
   const [cart] = useContext(CartContext);
 
   return (
