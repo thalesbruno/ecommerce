@@ -10,7 +10,7 @@ import pageWrapperHOC from '../components/wrappers/pageWrapperHOC';
 import { ProductsContext } from '../contexts/ProductsContext';
 import Item from '../components/Item';
 
-const HomePage = () => {
+export const HomePage = () => {
   const [products, setProducts] = useContext(ProductsContext);
   const [sortBy, setSortBy] = useState('');
 

@@ -10,25 +10,35 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Rating from '@mui/material/Rating';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 import { CartContext } from '../contexts/CartContext';
 
 const Item = ({ product }) => {
   const [cart, setCart] = useContext(CartContext);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => setOpen(false);
 
   const handleClick = () => {
-    const productList = cart.products;
-    const idx = productList.findIndex((p) => p.id === product.id);
-    if (idx !== -1) {
-      productList[idx].count += 1;
-      setCart({
-        ...cart,
-        products: [...productList],
-      });
-    } else {
-      setCart({
-        ...cart,
-        products: [...cart.products, { ...product, count: 1 }],
-      });
+    try {
+      const productList = cart.products;
+      const idx = productList.findIndex((p) => p.id === product.id);
+      if (idx !== -1) {
+        productList[idx].count += 1;
+        setCart({
+          ...cart,
+          products: [...productList],
+        });
+      } else {
+        setCart({
+          ...cart,
+          products: [...cart.products, { ...product, count: 1 }],
+        });
+      }
+      setOpen(true);
+    } catch (err) {
+      throw new Error(err);
     }
   };
 
@@ -58,6 +68,15 @@ const Item = ({ product }) => {
         >
           Adicionar ao carrinho
         </Button>
+        <Snackbar
+          open={open}
+          autoHideDuration={5000}
+          onClose={handleClose}
+        >
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            Produto adicionado ao carrinho
+          </Alert>
+        </Snackbar>
       </CardActions>
     </Card>
   );
