@@ -3,6 +3,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
@@ -47,8 +48,8 @@ const CartItem = ({ product }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', margin: '15px 0' }}>
-      <Box sx={{ display: 'flex' }}>
+    <Grid container margin="15px 0" direction="row" justifyContent="space-between">
+      <Grid item xs={12} sm={6} md={8} sx={{ display: 'flex' }}>
         <img alt="product" width="80" src={require(`../assets/${product.image}`).default} />
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <Typography variant="h6">{product.name}</Typography>
@@ -56,13 +57,15 @@ const CartItem = ({ product }) => {
             <DeleteIcon fontSize="small" />
           </IconButton>
         </Box>
-      </Box>
-      <Box sx={{
-        display: 'flex',
-        border: '1px solid',
-        height: '40px',
-        padding: '5px',
-      }}
+      </Grid>
+      <Grid
+        item
+        sx={{
+          display: 'flex',
+          border: '1px solid',
+          borderColor: 'text.disabled',
+          height: '40px',
+        }}
       >
         <Button
           disabled={product.count < 2}
@@ -91,13 +94,16 @@ const CartItem = ({ product }) => {
         >
           +
         </Button>
-      </Box>
-      <Typography variant="h6">
-        R$
-        {' '}
-        {(product.price * product.count).toFixed(2)}
-      </Typography>
-    </Box>
+      </Grid>
+      <Grid item xs={12} sm={2} md={2} display="flex" justifyContent="flex-end">
+        <Typography variant="h6">
+          R$
+          {' '}
+          {(product.price * product.count).toFixed(2)}
+        </Typography>
+
+      </Grid>
+    </Grid>
   );
 };
 
