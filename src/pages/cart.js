@@ -41,43 +41,26 @@ export const CartPage = () => {
             </Grid>
           )}
         <Divider />
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}
-        >
-          <Typography
-            sx={{
-              display: 'flex', flexDirection: 'column', justifyContent: 'center', marginRight: '80px',
-            }}
-            variant="h5"
-          >
-            Frete
-
-          </Typography>
-          <Typography variant="h5">{cart.subtotal > 250 ? 'GRÁTIS' : `R$ ${cart.shipping.toFixed(2)}`}</Typography>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}
-        >
-          <Typography
-            sx={{
-              display: 'flex', flexDirection: 'column', justifyContent: 'center', marginRight: '20px',
-            }}
-            variant="h5"
-          >
-            Total
-          </Typography>
-          <Typography variant="h4">
-            R$
-            {' '}
-            {cart.total.toFixed(2)}
-          </Typography>
-        </Box>
+        <Grid container direction="row" justifyContent="flex-end" margin="5px 0">
+          <Grid item xs={12} sm={2} display="flex" justifyContent="flex-end">
+            <Typography variant="h5">Frete</Typography>
+          </Grid>
+          <Grid item xs={12} sm={3} display="flex" justifyContent="flex-end">
+            <Typography variant="h5">{cart.subtotal > 250 ? 'GRÁTIS' : `R$ ${cart.shipping.toFixed(2)}`}</Typography>
+          </Grid>
+        </Grid>
+        <Grid container direction="row" justifyContent="flex-end">
+          <Grid item xs={12} sm={2} display="flex" justifyContent="flex-end">
+            <Typography variant="h5">Total</Typography>
+          </Grid>
+          <Grid item xs={12} sm={3} display="flex" justifyContent="flex-end">
+            <Typography variant="h4">
+              R$
+              {' '}
+              {cart.total.toFixed(2)}
+            </Typography>
+          </Grid>
+        </Grid>
       </Box>
     </Container>
   );
